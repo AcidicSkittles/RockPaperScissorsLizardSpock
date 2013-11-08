@@ -5,14 +5,16 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 public class JoinGame extends Activity {
-
+	String username = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_join_game);
-	
+		//Bundle extras = savedInstanceState.getExtras();
+	    username = (String) getIntent().getStringExtra("username");
 	}
 
 	@Override
@@ -23,11 +25,12 @@ public class JoinGame extends Activity {
 	}
 	public void join(View v0)
 	{
-		Intent t = new Intent(getBaseContext(), Game.class);
-		//hard coded names for simplicity
-		t.putExtra("username", "Derek");
-		t.putExtra("server", "localhost");
-		t.putExtra("port", "1337");
+		Intent t = new Intent(this, Game.class);
+		t.putExtra("username", username);
+		TextView tt = (TextView)findViewById(R.id.editText1);
+		t.putExtra("server", tt.getText());
+		TextView ttt = (TextView)findViewById(R.id.editText2);
+		t.putExtra("port", ttt.getText());
 		startActivity(t);
 	}
 }

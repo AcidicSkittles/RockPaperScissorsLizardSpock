@@ -32,7 +32,7 @@ public class Game extends Activity {
 		setContentView(R.layout.activity_game);
 		webView=(WebView) findViewById(R.id.webView1);
 		try {
-			client = new HTMLClient(6666,"10.20.63.3","Mark",Game.this);
+			client = new HTMLClient(Integer.parseInt((String) getIntent().getStringExtra("port")),(String) getIntent().getStringExtra("server"),(String) getIntent().getStringExtra("username"),Game.this);
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

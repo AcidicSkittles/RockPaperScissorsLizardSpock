@@ -15,16 +15,14 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.example.rockpaperscissorslizardspock.Game" >
+        </activity>
+        <activity
+            android:name="com.example.rockpaperscissorslizardspock.JoinGame" >
+        </activity>
+        <activity
             android:name="com.example.rockpaperscissorslizardspock.MainActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="com.example.rockpaperscissorslizardspock.JoinGame"
-            android:label="@string/title_activity_join_game" >
-        </activity>
-        <activity
-            android:name="com.example.rockpaperscissorslizardspock.Game"
-            android:label="@string/title_activity_game" ><intent-filter>
+            android:label="@string/app_name" ><intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
